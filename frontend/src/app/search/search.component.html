@@ -1,0 +1,86 @@
+
+
+
+<div class="container" style="position:absolute; top:80px;">
+  <div class="row">
+    <div class="col-md-12">
+      <!--<form (ngSubmit)="onSubmit(theForm)" #theForm="ngForm">-->
+      <div class="input-group" id="adv-search"  >
+        <input type="text" class="form-control"  [(ngModel)]="keyWord" placeholder="Search for keyWord" />
+        <div class="input-group-btn">
+          <div class="btn-group" role="group">
+            <div class="dropdown dropdown-lg">
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
+              <div class="dropdown-menu dropdown-menu-right" role="menu">
+
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary" (click)="onSubmit(keyWord)"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+          </div>
+        </div>
+      </div>
+      <!--</form>-->
+    </div>
+  </div>
+
+
+    <div class="row" *ngIf="pages">
+
+      <section class="content">
+        <h1>Table Filter</h1>
+        <div class="col-md-8 col-md-offset-2">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <div class="pull-right">
+
+              </div>
+              <div class="table-container">
+                <table class="table table-filter" *ngFor="let page of pages">
+                  <tbody>
+                  <tr data-status="pagado">
+                    <td>
+                      <div class="ckbox">
+                        <input type="checkbox" id="checkbox1">
+                        <label for="checkbox1"></label>
+                      </div>
+                    </td>
+                    <td>
+                      <a href="javascript:;" class="star">
+                        <i class="glyphicon glyphicon-star"></i>
+                      </a>
+                    </td>
+                    <td>
+                      <div class="media">
+                        <a href="#" class="pull-left">
+                          <img src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg" class="media-photo">
+                        </a>
+                        <div class="media-body">
+                          <span class="media-meta pull-right">{{page.time | date:'medium'}}</span>
+                          <h4 class="title">
+                            {{page.title}}
+                            <span class="pull-right pagado">({{page.ip}})</span>
+                          </h4>
+                          <p class="summary">{{page.url}}</p>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="content-footer">
+            <p>
+              Page © - 2016 <br>
+              Powered By <a href="https://www.facebook.com/tavo.qiqe.lucero" target="_blank">TavoQiqe</a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+</div>
+

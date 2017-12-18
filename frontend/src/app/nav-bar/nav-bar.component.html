@@ -1,0 +1,104 @@
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" [routerLink]="'/welcome'">
+        Browser Assistant
+      </a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <!--class="active"-->
+        <li ><a [routerLink]="'/home'">
+          <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
+        <li><a [routerLink]="'/search'">Search</a></li>
+        <li><a [routerLink]="'/statistics'">Statistics</a></li>
+        <li><a [routerLink]="'/recommendation'">Recommendation</a></li>
+      </ul>
+      <ul *ngIf="loginFlag()" class="nav navbar-nav navbar-right">
+
+        <!--<li class="dropdown">-->
+          <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown"-->
+             <!--role="button" aria-haspopup="true"-->
+             <!--aria-expanded="false">My Account <span class="caret"></span></a>-->
+
+          <!--<ul class="dropdown-menu">-->
+            <!--<li><a [routerLink] = "'/cart'">Cart</a></li>-->
+            <!--<li role="separator" class="divider"></li>-->
+            <!--<li><a [routerLink] = "'/profile'">User Profile</a></li>-->
+            <!--<li><a [routerLink] = "'/orders'">Order History</a></li>-->
+          <!--</ul>-->
+        <!--</li>-->
+
+        <li><a  (click)="onSignOut()"> Sign out</a></li>
+      </ul>
+      <div *ngIf="!loginFlag()" class="nav navbar-nav navbar-right"  style="padding:5px;">
+        <a><button 	 class="btn btn-info btn-sm" (click)="onLogIn()"  >Sign in</button></a>
+        <a><button	 class="btn btn-default btn-sm" (click)="onRegister()" >Register</button></a>
+      </div>
+
+    </div>
+
+
+
+
+
+
+
+  </div>
+</nav>
+
+
+<!--<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">-->
+  <!--<div class="container">-->
+    <!--<div class="navbar-header">-->
+      <!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">-->
+        <!--<span class="sr-only">Toggle navigation</span>-->
+        <!--<span class="icon-bar"></span>-->
+        <!--<span class="icon-bar"></span>-->
+        <!--<span class="icon-bar"></span>-->
+      <!--</button>-->
+      <!--<a class="navbar-brand" [routerLink]="'/welcome'">-->
+        <!--Browser Assistant-->
+      <!--</a>-->
+    <!--</div>-->
+
+    <!--<div id="navbar" class="navbar-collapse collapse">-->
+
+      <!--<ul class="nav navbar-nav" style="padding:5px;">-->
+
+        <!--<li  style="padding:10px;color:white">latitude: </li>-->
+        <!--<li  style="padding:10px;color:white">{{lat}} </li>-->
+        <!--<li  style="padding:10px;color:white">longitude: </li>-->
+        <!--<li  style="padding:10px;color:white">{{lng}} </li>-->
+        <!--<li  style="padding:10px;color:white">distance: </li>-->
+        <!--<li  style="top: 7px; "><input type="text" class="form-control" style="height:25px; width: 90px" required [(ngModel)]="distance" name="distance">  </li>-->
+        <!--<li  style="padding:10px;color:white">km</li>-->
+        <!--<li  style="top: 7px" class=" btn-sm btn-info " (click)="filterDistance()">LogIn</li>-->
+
+      <!--</ul>-->
+
+
+      <!--<ul class="nav navbar-nav navbar-right">-->
+        <!--<li class="dropdown">-->
+          <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown"-->
+             <!--role="button" aria-haspopup="true"-->
+             <!--aria-expanded="false">Category <span class="caret"></span></a>-->
+
+          <!--<ul class="dropdown-menu">-->
+            <!--<li *ngFor="let keyword of keyWords"><a (click)="getTweets(keyword)">{{keyword}}</a></li>-->
+          <!--</ul>-->
+        <!--</li>-->
+
+      <!--</ul>-->
+
+    <!--</div>-->
+
+  <!--</div>-->
+<!--</nav>-->
